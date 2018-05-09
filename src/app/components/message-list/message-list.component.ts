@@ -3,7 +3,7 @@ import { Message } from '../../models/message';
 @Component({
   selector: 'message-list',
   templateUrl: './message-list.component.html',
-  styleUrls: ['./message-list.component.css']
+  styleUrls: ['./message-list.component.scss']
 })
 export class MessageListComponent implements OnInit {
 

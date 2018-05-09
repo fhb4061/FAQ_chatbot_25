@@ -3,7 +3,7 @@ import { Message } from '../../models/message';
 @Component({
   selector: 'message-item',
   templateUrl: './message-item.component.html',
-  styleUrls: ['./message-item.component.css']
+  styleUrls: ['./message-item.component.scss']
 })
 export class MessageItemComponent implements OnInit {
   @Input('message')

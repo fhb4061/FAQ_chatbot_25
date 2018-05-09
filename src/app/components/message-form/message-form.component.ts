@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Message } from '../../models/message';
+import { DialogflowService } from '../../services/dialogflow.service';
 @Component({
   selector: 'message-form',
   templateUrl: './message-form.component.html',
-  styleUrls: ['./message-form.component.css']
+  styleUrls: ['./message-form.component.scss']
 })
 export class MessageFormComponent implements OnInit {
   @Input('message')
