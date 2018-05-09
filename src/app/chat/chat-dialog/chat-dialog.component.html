@@ -1,3 +1,9 @@
-<p>
-  chat-dialog works!
-</p>
+<h1>AUT BCIS ChatBot</h1>
+
+
+<label for="nameField">Your Message</label>
+
+
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+
+<button (click)="sendMessage()">Send</button>

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 //importing the chat module
 import { ChatModule} from './chat/chat.module';
+import {ChatDialogComponent} from './chat/chat-dialog/chat-dialog.component';
 @NgModule({
   declarations: [
     AppComponent
