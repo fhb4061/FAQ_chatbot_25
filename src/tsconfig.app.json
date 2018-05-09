@@ -8,5 +8,11 @@
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts",
+    "./main.ts",
+    "./polyfills.ts"
   ]
 }
