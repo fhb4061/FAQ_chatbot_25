@@ -18,7 +18,7 @@ export class MessageFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  public sendMessage(): void {
+  public sendMessage(): void {  //Void method to send message to chatbot
     this.message.timestamp = new Date();
     this.messages.push(this.message);
 

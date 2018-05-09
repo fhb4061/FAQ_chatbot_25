@@ -22,7 +22,7 @@ export class DialogflowService {
       })
   }
 
-  public getHeaders(){
+  public getHeaders(){//method to get header
     let headers = new Headers();
     headers.append('Authorization', `Bearer ${this.token}`);
     return headers;
