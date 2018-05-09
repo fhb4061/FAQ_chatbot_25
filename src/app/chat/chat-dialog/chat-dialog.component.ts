@@ -9,6 +9,7 @@ import 'rxjs/add/operator/scan';
 })
 export class ChatDialogComponent implements OnInit {
 
+  //messages: Observable<Message[]>;
   formValue: string;
 
   constructor() { }
