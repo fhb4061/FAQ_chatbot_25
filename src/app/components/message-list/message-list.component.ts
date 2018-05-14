@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewChecked } from '@angular/core';
 import { Message } from '../../models/message';
 @Component({
   selector: 'message-list',
@@ -14,5 +14,7 @@ export class MessageListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  
 
 }

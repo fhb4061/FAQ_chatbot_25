@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  token: 'YOUR DIALOGFLOW TOKEN'
+  token: '02ed4a16070147099dd89fac4b0f5d1c'
 };
 
 /*

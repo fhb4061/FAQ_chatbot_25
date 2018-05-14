@@ -1,4 +1,4 @@
 <div class="chatcontrol"> 
-  <input type="text" class="form-control chatinput" [(ngModel)]="message.content"/>
+  <input type="text" class="form-control chatinput" [(ngModel)]="message.content" (keydown.enter)="sendMessage()"/>
   <button class="btn btn-success sendbtn" (click)="sendMessage()">Send</button> <!-- Button to send message to chat bot -->
 </div>
