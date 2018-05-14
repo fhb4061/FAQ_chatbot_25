@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Message } from './models/message';
+import { timestamp } from 'rxjs/operators';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +15,7 @@ export class AppComponent {
   constructor(){
     this.message = new Message('', 'assets/images/user.png');
     this.messages = [
-      new Message('Welcome to chatbot universe', 'assets/images/bot.jpg', new Date())
+      new Message('Welcome to AUT BCIS chatbot', 'assets/images/bot.jpg', new Date())
     ];
   }
 }

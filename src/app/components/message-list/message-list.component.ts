@@ -8,7 +8,7 @@ import { Message } from '../../models/message';
 export class MessageListComponent implements OnInit {
 
   @Input('messages')
-  private messages: Message[];//Declare message array
+  messages: Message[];//Declare message array
 
   constructor() { }
 

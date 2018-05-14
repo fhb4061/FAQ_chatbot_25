@@ -9,10 +9,10 @@ import 'rxjs';
 })
 export class MessageFormComponent implements OnInit {
   @Input('message')
-  private message : Message;
+  message : Message;
 
   @Input('messages')
-  private messages : Message[];
+  messages : Message[];
 
   constructor(private dialogFlowService: DialogflowService) { }
 
@@ -29,7 +29,7 @@ export class MessageFormComponent implements OnInit {
       this.messages.push(this.message);//Push to message array
 
 
-      this.dialogFlowService.getResponse(this.message["content"]).subscribe(res => {
+      this.dialogFlowService.getResponse(this.message["content"]).subscribe(res => {//Send message content to chatbot
         this.messages.push(
           new Message(res.result.speech, 'assets/images/bot.jpg', res.timestamp)//Get response from diagramflow
         );
