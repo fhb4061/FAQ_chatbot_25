@@ -1,7 +1,7 @@
 <!-- listing message -->
 <div class="chatlist" #scrollMe [scrollTop]="scrollMe.scrollHeight">
   <ul class="list-group">
-    <message-item *ngFor="let msg of messages" [message]="msg"></message-item>
+    <message-item *ngFor="let msg of messages" [message]="msg"></message-item><!-- To fetch message item -->
   </ul>
 </div>
 
