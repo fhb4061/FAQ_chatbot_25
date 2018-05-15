@@ -1,4 +1,4 @@
-export class Message {
+export class Message { //using class to create message object
     content: string;
     timestamp: Date;
     avatar: string;
