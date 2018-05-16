@@ -1,12 +1,17 @@
-sudo: false
 language: node_js
+node_js: stable
+dist: trusty
+sudo: false
+
 cache:
 	directories:
-		- node_modules
-	node_js:6
-	branches:
-	- master
-	notification:
-	email: false
-	script:
-	-npm run validate
+	- node_modules
+
+addons:
+	chrome: stable
+
+script:
+	- npm run lint
+	- npm run test:headless
+	- npm run build
+	- xvfb npm run e2e
