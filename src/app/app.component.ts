@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Message } from './models/message';
 import { timestamp } from 'rxjs/operators';
 import { Timestamp } from 'rxjs/internal/operators/timestamp';
@@ -8,8 +8,12 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Chatbot25';
+
+  @Input('message')
   public message : Message;
+
+  @Input('messages')
   public messages : Message[];
 
   constructor(){
