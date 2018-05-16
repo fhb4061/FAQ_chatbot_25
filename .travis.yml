@@ -1,17 +1,99 @@
-language: node_js
-node_js: stable
 dist: trusty
 sudo: false
 
-cache:
-	directories:
-	- node_modules
-
 addons:
-	chrome: stable
+  chrome: stable
 
-script:
-	- npm run lint
-	- npm run test:headless
-	- npm run build
-	- xvfb npm run e2e
+language: node_js
+
+cache:
+  directories:
+     - ./node_modules
+
+stages:
+  - build
+  - test
+  - name: optional
+    if: (NOT type IN (pull_request)) AND (branch = master)
+  - deploy
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: nightly
+    - env: node9
+  include:
+    # Build stage
+    - stage: build
+      script: npm run lint
+      env: lint
+    - script: npm run build
+      env: build
+
+    # Test stage
+    - stage: test
+      script: npm run test
+      env: test
+    - node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --nb-shards=4 --shard=0 --nosilent
+      env: e2e-0
+    - node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --nb-shards=4 --shard=1 --nosilent
+      env: e2e-1
+    - node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --nb-shards=4 --shard=2 --nosilent
+      env: e2e-2
+    - node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --nb-shards=4 --shard=3 --nosilent
+      env: e2e-3
+    - node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --ng-version="^5.0.0" "--glob=tests/{basic,build/styles,build/aot}/**"
+      env: ng5-subset-1
+    - node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --ng-version="^5.0.0" "--glob=tests/build/*"
+      env: ng5-subset-2
+
+    # Optional stage.
+    - stage: optional
+      node_js: "8"
+      os: linux
+      script: node tests/run_e2e.js --nightly "--glob=tests/build/**"
+      env: nightly
+    - node_js: "9"
+      os: linux
+      script: node tests/run_e2e.js "--glob=tests/build/**"
+      env: node9
+    - node_js: "10"
+      os: linux
+      script: node tests/run_e2e.js "--glob=tests/build/**"
+      env: node10
+
+    # Deploy stage
+    - stage: deploy
+      script: skip
+      env: builds
+      deploy:
+      - provider: script
+        script: node scripts/git-builds.js
+        skip_cleanup: true
+        on:
+          all_branches: true
+    - script: skip
+      env: publish
+      deploy:
+      - provider: script
+        script: node scripts/publish/publish.js
+        skip_cleanup: true
+        on:
+          tags: true
+
+
+install:
+  - npm install -g npm@5.8.0
+  - npm install
