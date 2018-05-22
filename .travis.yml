@@ -5,6 +5,7 @@ addons:
   chrome: stable
 
 language: node_js
+node_js: stable
 
 cache:
   directories:
@@ -12,10 +13,8 @@ cache:
 
 stages:
   - build
-  - test
   - name: optional
     if: (NOT type IN (pull_request)) AND (branch = master)
-  - deploy
 
 matrix:
   fast_finish: true
