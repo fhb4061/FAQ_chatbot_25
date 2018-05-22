@@ -11,21 +11,13 @@ cache:
   directories:
      - ./node_modules
 
-stages:
-  - build
-  - name: optional
-    if: (NOT type IN (pull_request)) AND (branch = master)
+before_script:
+- npm install -g --silent @angular/cli
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - env: nightly
-    - env: node9
-  include:
-    # Build stage
-    - script: ng build
-      env: build
+script:
+- ng build --prod
 
-install:
-  - npm install -g npm@5.8.0
-  - npm install -g @angular/cli
+notifications:
+email:
+on_failure: change
+on_success: change
