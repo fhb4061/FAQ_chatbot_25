@@ -20,7 +20,7 @@ export class MessageFormComponent implements OnInit {
   }
 
   public sendMessage(): void {  //Void method to send message to chatbot
-    if(this.message.content == '' || this.message.content == null){
+    if(this.message["content"] == '' || this.message["content"] == null){
       //check if the text is blank
       console.log('Please enter your message');
     }else{
