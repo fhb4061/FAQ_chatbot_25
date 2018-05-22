@@ -23,7 +23,7 @@ matrix:
     - env: node9
   include:
     # Build stage
-    - script: npm run build
+    - script: ng build
       env: build
 
 install:
