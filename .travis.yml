@@ -28,4 +28,4 @@ matrix:
 
 install:
   - npm install -g npm@5.8.0
-  - npm install -g angular/cli
+  - npm install -g @angular/cli
