@@ -1,18 +1,17 @@
 sudo: false
 language: node_js
-	node_js:
-	- "8.9.4"
+- node_js: "8.9.4"
 
-	branches:
+branches:
 	- master
 	
-	before_script:
+before_script:
 	- npm install -g @angular_cli
 
-	script:
+script:
 	ng build --prod
 
-	notification:
+notification:
 	email:
 	on_failure: change
 	on_success: change
