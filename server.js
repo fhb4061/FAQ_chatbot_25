@@ -11,5 +11,5 @@ app.listen(process.env.PORT || 8080);
 
 //PathLocationStrategy
 app.get('/*', function(req,res) {    
-    res.sendFile(path.join(__dirname+'./dist/chatbot25/index.html'));
+    res.sendFile(path.join(__dirname+'../chatbot25/dist/chatbot25/index.html'));
     });
