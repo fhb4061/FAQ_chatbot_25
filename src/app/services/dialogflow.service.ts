@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-//import { Observable } from 'rxjs/internal/observable';
 import {map} from 'rxjs/operators';
-//import 'rxjs';
 import { environment } from '../../environments/environment';
+
 @Injectable()
 export class DialogflowService {
-  private token: string = environment.token;//Get token from diagramflow
-  private baseURL: string = "https://api.dialogflow.com/v1/query";//API of diagram Flow
+  private token: string = environment.token;//Get token from dialog flow
+  private baseURL: string = "https://api.dialogflow.com/v1/query";//API of dialog Flow
   constructor(private http: Http) { }
 
-  public getResponse(query: string){ //This method to get response from diagramflow
+  public getResponse(query: string){ //This method to get response from dialogflow
     let data = {//Create object to make session
       query : query,
       lang: 'en',
