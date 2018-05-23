@@ -31,8 +31,7 @@
     "npm": "^6.0.1",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26",
-    "typescript": "~2.7.2"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.6.3",
@@ -52,7 +51,8 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1"
+    "tslint": "~5.9.1",
+    "typescript": "~2.7.2"
   },
   "engines": {
     "node": "8.11.1",
