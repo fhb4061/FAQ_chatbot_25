@@ -8,7 +8,7 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Chatbot25';
+  title = 'app';
 
   @Input('message')
   public message : Message;
