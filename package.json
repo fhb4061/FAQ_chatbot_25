@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod",
-    "start": "node server.js"
+    "postinstall": "ng build --aot --prod"
+    
   },
   "private": true,
   "dependencies": {
@@ -30,7 +31,8 @@
     "npm": "^6.0.1",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "typescript": "~2.7.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.6.3",
@@ -50,8 +52,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "tslint": "~5.9.1"
   },
   "engines": {
     "node": "8.11.1",
