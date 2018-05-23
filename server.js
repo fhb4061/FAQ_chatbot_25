@@ -9,7 +9,7 @@ const forceSSL = function(){
         if (res.headers['x-forward-proto'] !== 'https')
         {
             return res.redirect(
-                ['https://', req.get('Host'), req.url].join('')]
+                ['https://', req.get('Host'), req.url].join('')
             );
         }
         next();
